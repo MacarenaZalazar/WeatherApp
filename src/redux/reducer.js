@@ -1,9 +1,10 @@
-import { ADD_FAVOURITE, DELETE_CITY, DELETE_FAVOURITE, GET_CITY, GET_DETAILS } from "./constants";
+import { ADD_FAVOURITE, DELETE_CITY, DELETE_FAVOURITE, GET_CITY, GET_DETAILS, SET_FLAG } from "./constants";
 
 const initialState = {
     cities: [],
     favourites: [],
-    cityDetails: []
+    cityDetails: [],
+    flag: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -20,9 +21,10 @@ const rootReducer = (state = initialState, action) => {
                 cities: [...state.cities].filter(e => e.name !== payload)
             }
         case ADD_FAVOURITE:
+            console.log(state.cities.filter(e=> e.name===payload))
             return{
                 ...state,
-                favourites: [...state.favourites, payload]
+                favourites: [...state.favourites, ...state.cities.filter(e => e.name === payload)]
             }
         case DELETE_FAVOURITE:
             return{
@@ -32,7 +34,12 @@ const rootReducer = (state = initialState, action) => {
         case GET_DETAILS:
             return{
                 ...state,
-                cityDetails: [payload]
+                cityDetails: state.cities.filter(e => e.name === payload)
+            }
+        case SET_FLAG:
+            return{
+                ...state,
+                flag: payload
             }
         default:
             return state;

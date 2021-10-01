@@ -5,20 +5,17 @@
   object-fit: contain;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
   background-image: url('/Users/macarena/Desktop/WEBSITES/WeatherApp/src/utils/clouds-loop_2.gif');
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
 }
 
 .App-header {
@@ -43,11 +40,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.heroVideo{
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
 }
