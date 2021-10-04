@@ -7,7 +7,7 @@
   display:flex;
   flex-direction: column;
   align-content: center;
-  background-image: url('/Users/macarena/Desktop/WEBSITES/WeatherApp/src/utils/clouds-loop_2.gif');
+  background-image: url('/Users/macarena/Desktop/WEBSITES/WeatherApp/src/clouds-loop_2.gif');
   background-size: cover;
   background-repeat: no-repeat;
 }
