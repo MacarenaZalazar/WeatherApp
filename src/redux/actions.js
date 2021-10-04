@@ -47,6 +47,6 @@ export const deleteFavourite =  (city) => {
     return {type: DELETE_FAVOURITE, payload: city}
 }
 
-export const setFlag = () => {
-    return {type: SET_FLAG, payload: true}
+export const setFlag = (boolean) => {
+    return {type: SET_FLAG, payload: boolean}
 }

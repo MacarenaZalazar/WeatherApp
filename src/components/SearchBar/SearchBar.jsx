@@ -7,7 +7,7 @@ import { SearchbarContainer } from './styledSearchbar';
 import Logo from'../../utils/sun.png'
 import { useHistory } from 'react-router-dom';
 
-const SearchBar = () => {
+const SearchBar = ({flag}) => {
     const [city, setCity] = useState('')
     const dispatch = useDispatch()
     const handleChange = (e) => {
@@ -15,6 +15,8 @@ const SearchBar = () => {
     }
     const {cities} = useSelector(state => state)
     const history = useHistory()
+    
+    //const {flag} = useSelector(state => state)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -32,7 +34,7 @@ const SearchBar = () => {
 
     return (
         <>
-            <SearchbarContainer>
+            { flag && <SearchbarContainer>
                 <Navbar collapseOnSelect  bg="light" expand="lg" variant='light'>
                     <Container>
                         <Navbar.Brand><img alt="" src={Logo} width="30"height="30"
@@ -52,7 +54,7 @@ const SearchBar = () => {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-            </SearchbarContainer>
+            </SearchbarContainer>}
         </>
     );
 };

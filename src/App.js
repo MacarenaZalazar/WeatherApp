@@ -14,7 +14,7 @@ function App() {
   return (
     <AppCont img={cloudsGif}>
           <Route exact path='/' component={Hero} />
-          {flag &&<Route path='/' component={SearchBar} />}
+          <Route path='/' component={()=> <SearchBar flag={flag}/>} />
           <Route exact path='/home' component={Home} />
           <Route path ='/details/:name' component={WeatherDetails}/>
           <Route exact path ='/favourites' component={Favourites}/>
