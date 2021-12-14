@@ -6,10 +6,10 @@ const {REACT_APP_API_KEY} = process.env
 export const getCity =  (city) => {
    return async (dispatch) => {
         try {
-            let info = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`)
+            let info = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`)
             info =  { min: Math.round(info.data.main.temp_min),
                     max: Math.round(info.data.main.temp_max),
-                    img: `http://openweathermap.org/img/wn/${info.data.weather[0].icon}@2x.png`,
+                    img: `https://openweathermap.org/img/wn/${info.data.weather[0].icon}@2x.png`,
                     wind: info.data.wind.speed,
                     temp: Math.round(info.data.main.temp),
                     name: info.data.name,
